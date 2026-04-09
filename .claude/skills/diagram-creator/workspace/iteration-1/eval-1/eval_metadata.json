@@ -1,0 +1,6 @@
+{
+  "eval_id": 1,
+  "eval_name": "flowchart-auth-file",
+  "prompt": "Create a flowchart mermaid diagram for: User -> Web -> API -> DB. Put it in docs/diagrams/auth.md",
+  "assertions": []
+}

@@ -1,0 +1,6 @@
+{
+  "eval_id": 3,
+  "eval_name": "class-diagram-posts-comments",
+  "prompt": "Make a class diagram for these components: User (id, name), Post (id, title, author_id), Comment (id, post_id, author_id).",
+  "assertions": []
+}

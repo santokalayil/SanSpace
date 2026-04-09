@@ -1,0 +1,6 @@
+{
+  "eval_id": 2,
+  "eval_name": "sequence-ask-location",
+  "prompt": "Draw a sequence diagram showing: Browser requests page, Server returns HTML, Browser requests API, Server returns JSON.",
+  "assertions": []
+}

@@ -1,0 +1,26 @@
+{
+  "skill_name": "git-safe-push",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "ok I've been working on the langfuse notes all morning and I think they're ready to push to GitHub. there are also some half-finished changes in the README I started yesterday but don't want to include yet. help me push just the notes files.",
+      "expected_output": "The skill identifies the half-finished README changes as stash candidates and asks the user before proceeding. It scans the notes files for credentials. It stages only the relevant files one by one (no git add .). It suggests a commit message and confirms before committing. It pulls with rebase before pushing.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "push this to github. I have a .env file with my openai key and cosmos connection string in the project root",
+      "expected_output": "The skill finds the .env file and checks if it's gitignored. If not gitignored, it adds it to .gitignore immediately, inspects the content, masks the key values shown, and asks the user if they need to rotate those credentials before proceeding. Never stages the .env file. Then continues with the regular push flow for other files.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "hey can you push my changes to main? I've got a few py files changed, also one of them has a hardcoded API key I put in for testing - it's a fake key though, don't worry about it",
+      "expected_output": "The skill warns about pushing directly to main and asks for confirmation. It flags the hardcoded API key pattern during the security scan, shows the file/line, and asks the user to confirm it's genuinely a fake/test value before proceeding. It does not silently ignore the finding. After user confirms it's fake, it continues the flow.",
+      "files": [],
+      "assertions": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "diagram-creator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a flowchart mermaid diagram for: User -> Web -> API -> DB. Put it in docs/diagrams/auth.md",
+      "expected_output": "A Markdown file at docs/diagrams/auth.md containing a mermaid flowchart code block",
+      "files": ["docs/diagrams/auth.md"]
+    },
+    {
+      "id": 2,
+      "prompt": "Draw a sequence diagram showing: Browser requests page, Server returns HTML, Browser requests API, Server returns JSON.",
+      "expected_output": "Assistant asks where to create the file (no file specified) and then produces a Markdown file with a `sequenceDiagram` mermaid block",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Make a class diagram for these components: User (id, name), Post (id, title, author_id), Comment (id, post_id, author_id).",
+      "expected_output": "A Markdown snippet containing a `classDiagram` mermaid block mapping the classes and relations",
+      "files": []
+    }
+  ]
+}

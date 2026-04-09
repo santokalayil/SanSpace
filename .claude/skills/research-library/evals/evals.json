@@ -1,0 +1,23 @@
+{
+  "skill_name": "research-library",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want to self-host Langfuse locally using Docker Compose and also use the Python SDK to trace my OpenAI calls. Find the latest version, verify the docker-compose.yml from the official source, and give me a minimal working example. Double-check the SDK tracing API against the actual source code.",
+      "expected_output": "research_report.md with: latest Langfuse version + Docker image tag, official docker-compose.yml contents, confirmed Python SDK trace() / observe() API from source, minimal runnable Python example, and any doc vs code mismatches flagged.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Research the qdrant-client Python package. I need to use it to upsert vectors with named vectors (multi-vector collections). Find the latest version, check the docs and source for the correct API to upsert with named vectors, and flag any differences you find between the docs and the actual implementation.",
+      "expected_output": "research_report.md with: latest qdrant-client version, confirmed upsert API with named vectors from source, any signature mismatches between docs and code, and a minimal Python snippet using the real API.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I'm trying to use the opentelemetry-sdk Python package to export traces to a Jaeger backend. Research the latest OTel SDK version, find the correct exporter package and config (env vars and code), cross-check with source, and produce a working docker-compose.yml for Jaeger plus a Python tracing example.",
+      "expected_output": "research_report.md with: latest opentelemetry-sdk version + correct exporter package name, confirmed OTLP export config from source, docker-compose.yml for Jaeger, Python tracing example, and any env-var or config mismatches between docs and source.",
+      "files": []
+    }
+  ]
+}
