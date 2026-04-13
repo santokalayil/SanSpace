@@ -1,0 +1,23 @@
+{
+  "skill_name": "python-advanced",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have a Python 3.12 project. Write me a repository layer for reading and writing User records to a JSON file. A User has an id (UUID), email, full_name, and an optional list of roles. I want clean separation so I can swap the JSON file for a Postgres backend later without changing the callers.",
+      "expected_output": "A Protocol-based UserRepository interface, a JsonFileUserRepository implementation using Pydantic v2 models (with extra=forbid, frozen=True), pathlib.Path for the file path, importlib.resources if the default config is bundled, proper logging with getLogger, no dict.get() silent defaults, full type annotations using Python 3.12 syntax (type aliases via `type X = ...`, union via `X | Y`), relative imports assumed within a package.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "My project targets Python 3.10. I have this function and it's getting hard to follow — can you refactor it?\n\n```python\ndef process(data):\n    result = []\n    for item in data:\n        if item.get('type') == 'invoice':\n            if item.get('amount'):\n                if item['amount'] > 0:\n                    r = {}\n                    r['id'] = item.get('id') or 'unknown'\n                    r['amount'] = item['amount']\n                    result.append(r)\n    return result\n```",
+      "expected_output": "Refactored version: TypedDict or Pydantic model for item shape, `match` statement replacing nested ifs (Python 3.10+), no .get() silent defaults or `or 'unknown'` coercions, full type hints using dict[str,str] style, split into small named functions, fail-fast on missing keys, logging added, PEP8 clean.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Python 3.11 project. Write an async HTTP client wrapper around httpx that fetches multiple URLs concurrently, collects results, and returns a typed summary. It should handle per-URL failures gracefully without killing the whole batch, and log what happened to each URL.",
+      "expected_output": "Uses asyncio.TaskGroup (3.11+), Pydantic v2 models for FetchResult and FetchSummary, full type annotations (Self, list[FetchResult], str | None), httpx.AsyncClient as context manager, per-task exception handling (ExceptionGroup/except* for 3.11), logging.getLogger(__name__), pathlib not needed here but no os.path, no silent defaults anywhere, clean split of concerns into focused async functions.",
+      "files": []
+    }
+  ]
+}
